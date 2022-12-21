@@ -1,0 +1,26 @@
+class Solution {
+public:
+    bool searchMatrix(vector<vector<int>>& matrix, int target) {
+    
+    // assuming that 2d matrix is a linear array or vector then we implement binary search in it.
+    
+        int row = matrix.size();
+        int col = matrix[0].size();
+        int s=0;
+        int e = row*col -1;
+        int m = s +(e-s)/2;
+
+        while(s<=e){
+        
+        
+            int t = matrix[m/col][m%col]; // converting matrix to linear type 
+            
+            
+            if(target==t){return 1;}
+            else if(target>t){s = m +1;}
+            else{e = m-1;}
+            m = s +(e-s)/2;
+        }
+        return 0;
+    }
+};
