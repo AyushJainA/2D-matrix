@@ -9,7 +9,7 @@ int main(){
 	int *arr=  new int [col];
 	
 	//creating a 2-d array dynamically 
-	int **array= new int *[row];
+	int **array= new int *[row]; // Important Line
 	for(int i =0;i<row;i++){
 		array[i]=new int[col]; 
 	}
